@@ -1,0 +1,17 @@
+//IBMUSERR   JOB (DDFREST),'DDFREST',MSGLEVEL=(1,1),                    
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID                         
+//********************************************************************  
+//BIND EXEC PGM=IKJEFT01,DYNAMNBR=20                                    
+//STEPLIB  DD DSN=DSNC10.SDSNLOAD,DISP=SHR                              
+//SYSTSPRT DD SYSOUT=*                                                  
+//SYSPRINT DD SYSOUT=*                                                  
+//SYSUDUMP DD SYSOUT=*                                                  
+//DSNSTMT DD *                                                          
+  SELECT * FROM Q.STAFF WHERE ID = :ID                                  
+//SYSTSIN DD *                                                          
+ DSN SYSTEM(DBCG)                                                       
+ BIND SERVICE(SAREST) -                                                 
+  NAME("REST01") -                                                      
+  SQLENCODING(1047) -                                                   
+  DESCRIPTION('GET EMPLOYEE BY STAFF ID')                               
+/*                                                                      
