@@ -1,0 +1,3 @@
+Install postman
+Import <filename.json>
+Open Samples
