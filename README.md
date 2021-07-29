@@ -18,4 +18,7 @@ The examples in this repository go from simple to advanced.
 - Heterogeneous Data Aps ( with IDF )
 - Multi-Speed Classes of Service
 
+The complete set of examples is in the postman-json examples folder.
+One simple example of JCL and CURL are includes in those folders as a template.
+
 Hopefully they will be helpful examples as an introduction to DB2 REST Service Manager Usage
