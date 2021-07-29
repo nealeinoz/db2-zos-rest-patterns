@@ -1,0 +1,12 @@
+//IBMUSERR   JOB (DDFREST),'DDFREST',MSGLEVEL=(1,1),                   
+//            CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID                        
+//******************************************************************** 
+//BIND EXEC PGM=IKJEFT01,DYNAMNBR=20                                   
+//STEPLIB  DD DSN=DSNC10.SDSNLOAD,DISP=SHR                             
+//SYSTSPRT DD SYSOUT=*                                                 
+//SYSPRINT DD SYSOUT=*                                                 
+//SYSUDUMP DD SYSOUT=*                                                 
+//SYSTSIN DD *                                                         
+ DSN SYSTEM(DBCG)                                                      
+ FREE SERVICE (SAREST.REST01)                                          
+/*                                                                     
