@@ -1,0 +1,1 @@
+curl -s -X POST -u IBMUSER:SYS1 -H "Accept: application/json" -H "Content-Type: application/json" --data "{\"requestType\": \"dropService\", \"collectionID\": \"SAREST\", \"serviceName\": \"REST01\"}" http://192.168.1.191:5040/services/DB2ServiceManager
