@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "917991f6-8bb6-488c-b1bf-08bc014bbb22",
+		"name": "04_SATEMPORAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DB2ServiceDiscover",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.191:5040/services",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services"
+					]
+				},
+				"description": "DDF Rest Service Manager List Services"
+			},
+			"response": []
+		},
+		{
+			"name": "Create REST06",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"requestType\": \"createService\", \r\n    \"sqlStmt\": \"SELECT SKU, DESCRIPTION, STOCK_QUANTITY FROM IBMUSER.STOCK FOR SYSTEM_TIME AS OF :INPUT\", \r\n    \"collectionID\": \"SAREST\", \r\n    \"serviceName\": \"REST06\", \r\n    \"description\": \"Temporal Stock API\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoke REST06",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"INPUT\": \"2021-07-29-20.04.00.000000000000\"}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/SAREST/REST06",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"SAREST",
+						"REST06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop REST06",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestType\": \"dropService\", \"collectionID\": \"SAREST\", \"serviceName\": \"REST06\"}"
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "5275e406-3a47-429e-9343-1ebc7a32a19a",
+		"name": "03_SAPROCS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DB2ServiceDiscover",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.191:5040/services",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services"
+					]
+				},
+				"description": "DDF Rest Service Manager List Services"
+			},
+			"response": []
+		},
+		{
+			"name": "Create REST04",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"requestType\": \"createService\", \r\n    \"sqlStmt\": \"CALL IBMUSER.SAPROC01()\", \r\n    \"collectionID\": \"SAREST\", \r\n    \"serviceName\": \"REST02\", \r\n    \"description\": \"Call Proc with Dynamic Result Set\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger for REST04",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/SAREST/REST04",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"SAREST",
+						"REST04"
+					]
+				},
+				"description": "DDF Rest Service Manager List Services"
+			},
+			"response": []
+		},
+		{
+			"name": "Invoke REST04",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/SAREST/REST04",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"SAREST",
+						"REST04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create REST05",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"requestType\": \"createService\",\r\n    \"sqlStmt\": \"call SAPROC02()\",\r\n    \"collectionID\": \"SAREST\", \r\n    \"serviceName\": \"REST05\", \r\n    \"description\": \"Two Results Sets\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoke REST05",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/SAREST/REST05",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"SAREST",
+						"REST05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create REST06",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"requestType\": \"createService\",\r\n    \"sqlStmt\": \"call SAPROC03(:MYPARM1,:MYPARM2)\",\r\n    \"collectionID\": \"SAREST\", \r\n    \"serviceName\": \"REST06\", \r\n    \"description\": \"Two Results Sets\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoke REST06",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"MYPARM1\": \"IBMUSER\", \"MYPARM2\": \"SAREST\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/SAREST/REST06",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"SAREST",
+						"REST06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop REST04",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestType\": \"dropService\", \"collectionID\": \"SAREST\", \"serviceName\": \"REST04\"}"
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop REST05",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestType\": \"dropService\", \"collectionID\": \"SAREST\", \"serviceName\": \"REST05\"}"
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop REST06",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "IBMUSER",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestType\": \"dropService\", \"collectionID\": \"SAREST\", \"serviceName\": \"REST06\"}"
+				},
+				"url": {
+					"raw": "http://192.168.1.191:5040/services/DB2ServiceManager",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"191"
+					],
+					"port": "5040",
+					"path": [
+						"services",
+						"DB2ServiceManager"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
